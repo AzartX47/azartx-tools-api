@@ -13,8 +13,8 @@ HEADERS = {
 API = "https://enc-dec.app/api"
 
 # Also works with https://flixer.su/
-# Movie format: <https://themoviedb.hexa.watch/api/tmdb/movie/{tmdb_id}/images>
-# Tv format: <https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season_number}/episode/{episode_number}/images>
+# Movie format: <https://themoviedb.hexa.su/api/tmdb/movie/{tmdb_id}/images>
+# Tv format: <https://themoviedb.hexa.su/api/tmdb/tv/{tmdb_id}/season/{season_number}/episode/{episode_number}/images>
 
 # --- Cyberpunk Edgerunners ---
 title = "Cyberpunk: Edgerunners"
@@ -26,7 +26,7 @@ season = "1"
 episode = "1"
 
 # Get encrypted text
-url = f"https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season}/episode/{episode}/images"
+url = f"https://themoviedb.hexa.su/api/tmdb/tv/{tmdb_id}/season/{season}/episode/{episode}/images"
 encrypted = requests.get(url, headers=HEADERS).text
 
 # Decrypt
