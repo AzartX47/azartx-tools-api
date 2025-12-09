@@ -4,8 +4,7 @@ import json
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
     "Connection": "keep-alive",
-    "Referer": "https://mapple.uk/",
-    "Next-Action": "40ac2af7f9d53a5019f46995d43a7a88ac3729f5ad" # Necessary header
+    "Referer": "https://mapple.uk/"
 }
 
 API = "https://enc-dec.app/api"
@@ -35,8 +34,12 @@ Sample payload formats:
 '''
 
 # Get session ID
-session_res = requests.get(f"{API}/enc-mapple", headers=HEADERS).json()
+session_res = requests.get(f"{API}/enc-mapple").json()
 session_id = session_res['result']['sessionId']
+next_action = session_res['result']['nextAction']
+
+# Add Next-Action to headers
+HEADERS['Next-Action'] = next_action
 
 # Build sample payload for tv series
 payload = [{
