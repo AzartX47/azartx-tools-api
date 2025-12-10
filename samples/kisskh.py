@@ -1,4 +1,5 @@
 import requests
+from urllib.parse import quote
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
@@ -23,7 +24,7 @@ subtitle_response = requests.get(url, headers=HEADERS).json()
 
 # Decrypt first subtitle content
 subtitle = subtitle_response[0]['src']
-subtitle_decrypt = requests.post(f"{API}/dec-kisskh", json={"url": subtitle}).text
+subtitle_decrypt = requests.get(f"{API}/dec-kisskh?url={quote(subtitle)}").text
 
 print(f"\n{'-'*25} Sample Response Data {'-'*25}\n")
 print("Video:\n", video_response)
