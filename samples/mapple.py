@@ -41,7 +41,7 @@ next_action = session_res['result']['nextAction']
 # Add Next-Action to headers
 HEADERS['Next-Action'] = next_action
 
-# Build sample payload for tv series
+# Build sample payload for movie
 payload = [{
     "mediaId": tmdb_id,
     "mediaType": "movie",
