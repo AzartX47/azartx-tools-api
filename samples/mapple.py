@@ -9,29 +9,35 @@ HEADERS = {
 
 API = "https://enc-dec.app/api"
 
-# --- Shawshank Redemption ---
-title = "Shawshank Redemption"
-type = "movie"
-year = "1994"
-imdb_id = "tt0111161"
-tmdb_id = "278"
-
 '''
 Sample API calls:
 https://mapple.uk/watch/movie/181812 - Movie
 https://mapple.uk/watch/tv/105248/1-1 - TV Show Season-Episode
 
 Sources:
+
+Name - _SOURCE_CODE_
+--------------------------------
 Mapple 4K - mapple
 Sakura - sakura
-Pinecone - alfa
+Willow - willow
+Cherry - cherry
+Pines - pines
 Oak - oak
-Willow - wiggles
+Magnolia - magnolia
+Sequoia - sequoia
 
 Sample payload formats:
 [{"mediaId": "181812", "mediaType": "movie", "tv_slug": "", "source": "_SOURCE_CODE_", "sessionId": "_SESSION_ID_"}] - Movie
 [{"mediaId": "105248", "mediaType": "tv", "tv_slug": "1-1", "source": "_SOURCE_CODE_", "sessionId": "_SESSION_ID_"}] - TV Show
 '''
+
+# --- Shawshank Redemption ---
+title = "Shawshank Redemption"
+type = "movie"
+year = "1994"
+imdb_id = "tt0111161"
+tmdb_id = "278"
 
 # Get session ID
 session_res = requests.get(f"{API}/enc-mapple").json()
