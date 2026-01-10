@@ -2,7 +2,8 @@ import requests
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-    "Connection": "keep-alive"
+    "Referer": "https://megaup.live/",
+    "Accept": "application/json"
 }
 
 API = "https://enc-dec.app/api"
